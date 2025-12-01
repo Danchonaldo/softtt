@@ -5,8 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                             http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <!-- 1) Create table countries -->
-    <changeSet id="create-countries-table" author="admin">
+    <changeSet id="create-countries-table" author="student">
         <createTable tableName="countries">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -20,8 +19,7 @@
         </createTable>
     </changeSet>
 
-    <!-- 2) Create table items -->
-    <changeSet id="create-items-table" author="admin">
+    <changeSet id="create-items-table" author="student">
         <createTable tableName="items">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -39,15 +37,13 @@
         </createTable>
     </changeSet>
 
-    <!-- 3) Add foreign key constraint -->
-    <changeSet id="add-fk-items-manufacturer" author="admin">
+    <changeSet id="add-fk-items-manufacturer" author="student">
         <addForeignKeyConstraint baseTableName="items"
                                  baseColumnNames="manufacturer_id"
                                  constraintName="fk_items_manufacturer"
-                                 onDelete="CASCADE"
-                                 onUpdate="RESTRICT"
                                  referencedTableName="countries"
                                  referencedColumnNames="id"
-                                 validate="true"/>
+                                 onDelete="CASCADE"/>
     </changeSet>
+
 </databaseChangeLog>

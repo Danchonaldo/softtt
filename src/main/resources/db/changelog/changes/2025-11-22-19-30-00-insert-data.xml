@@ -5,8 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                             http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <!-- 4) Fill in the countries table -->
-    <changeSet id="insert-countries" author="admin">
+    <changeSet id="seed-countries" author="student">
         <insert tableName="countries">
             <column name="name" value="USA"/>
             <column name="code" value="US"/>
@@ -16,30 +15,30 @@
             <column name="code" value="DE"/>
         </insert>
         <insert tableName="countries">
-            <column name="name" value="Japan"/>
-            <column name="code" value="JP"/>
+            <column name="name" value="China"/>
+            <column name="code" value="CN"/>
         </insert>
     </changeSet>
 
-    <!-- 5) Fill the items table -->
-    <changeSet id="insert-items" author="admin">
+    <changeSet id="seed-items" author="student">
         <insert tableName="items">
-            <column name="name" value="iPhone 15"/>
+            <column name="name" value="rtx"/>
             <column name="price" value="1000"/>
             <column name="quantity" value="50"/>
-            <column name="manufacturer_id" value="1"/> <!-- USA -->
+            <column name="manufacturer_id" value="1"/>
         </insert>
         <insert tableName="items">
-            <column name="name" value="BMW X5"/>
-            <column name="price" value="60000"/>
+            <column name="name" value="pocoX3"/>
+            <column name="price" value="80000"/>
             <column name="quantity" value="10"/>
-            <column name="manufacturer_id" value="2"/> <!-- Germany -->
+            <column name="manufacturer_id" value="2"/>
         </insert>
         <insert tableName="items">
-            <column name="name" value="Sony PlayStation 5"/>
+            <column name="name" value="samsung"/>
             <column name="price" value="500"/>
             <column name="quantity" value="100"/>
-            <column name="manufacturer_id" value="3"/> <!-- Japan -->
+            <column name="manufacturer_id" value="3"/>
         </insert>
     </changeSet>
+
 </databaseChangeLog>
