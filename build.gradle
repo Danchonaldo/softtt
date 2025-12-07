@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '4.0.0'
+    id 'org.springframework.boot' version '3.4.0'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -21,13 +21,24 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.liquibase:liquibase-core'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    // Lombok
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    // PostgreSQL
     runtimeOnly 'org.postgresql:postgresql'
+
+    // Liquibase (для миграций)
+    implementation 'org.liquibase:liquibase-core'
+
+    // MapStruct (для мапперов)
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
-    annotationProcessor 'org.projectlombok:lombok'
+
+    // Тесты
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {

@@ -7,6 +7,7 @@ import java.util.List;
 public interface ItemServiceInterface {
     List<ItemDTO> getAllItems();
     ItemDTO getItemById(Long id);
-    ItemDTO addItem(ItemDTO itemDTO);
-    void deleteItem(Long id);
+    ItemDTO createItem(ItemDTO itemDto);
+    ItemDTO updateItem(Long id,ItemDTO itemDto);
+    boolean deleteItem(Long id);
 }

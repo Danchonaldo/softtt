@@ -1,11 +1,15 @@
 package soft.lab9.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "items")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Item {
 
     @Id

@@ -8,43 +8,61 @@ import soft.lab9.mappers.CountryMapper;
 import soft.lab9.repositories.CountryRepository;
 import soft.lab9.services.CountryServiceInterface;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class CountryService implements CountryServiceInterface {
 
-    private final CountryMapper countryMapper;
     private final CountryRepository countryRepository;
+    private final CountryMapper countryMapper;
 
     @Override
     public List<CountryDTO> getAllCountries() {
-        return countryMapper.toDtoList(countryRepository.findAll());
+        List<Country> countries = countryRepository.findAll();
+        List<CountryDTO> dtos = new ArrayList<>();
+        for (Country country : countries) {
+            dtos.add(countryMapper.toDto(country));
+        }
+        return dtos;
     }
 
     @Override
     public CountryDTO getCountryById(Long id) {
-        return countryMapper.toDto(countryRepository.findById(id).orElse(null));
-    }
-
-    @Override
-    public CountryDTO addCountry(CountryDTO countryDTO) {
-        Country country = countryMapper.toEntity(countryDTO);
-        return countryMapper.toDto(countryRepository.save(country));
-    }
-
-    @Override
-    public CountryDTO updateCountry(CountryDTO countryDTO) {
-        Country country = countryMapper.toEntity(countryDTO);
-        if (country.getId() != null) {
-            return countryMapper.toDto(countryRepository.save(country));
+        Country country = countryRepository.findById(id).orElse(null);
+        if (country != null) {
+            return countryMapper.toDto(country);
         }
         return null;
     }
 
     @Override
-    public void deleteCountry(Long id) {
-        countryRepository.deleteById(id);
+    public CountryDTO createCountry(CountryDTO countryDto) {
+        Country country = countryMapper.toEntity(countryDto);
+        Country saved = countryRepository.save(country);
+        return countryMapper.toDto(saved);
     }
 
+    @Override
+    public CountryDTO updateCountry(Long id, CountryDTO countryDto) {
+        Country check = countryRepository.findById(id).orElse(null);
+        if (check != null) {
+            check.setName(countryDto.getName());
+            check.setCode(countryDto.getCode());
+            Country saved = countryRepository.save(check);
+            return countryMapper.toDto(saved);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean deleteCountry(Long id) {
+        Country check = countryRepository.findById(id).orElse(null);
+        if (check != null) {
+            countryRepository.delete(check);
+            return true;
+        }
+        return false;
+    }
 }

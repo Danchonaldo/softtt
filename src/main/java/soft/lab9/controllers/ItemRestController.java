@@ -3,6 +3,7 @@ package soft.lab9.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import soft.lab9.dto.ItemDTO;
+import soft.lab9.services.ItemServiceInterface;
 import soft.lab9.services.impl.ItemService;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemRestController {
 
-    private final ItemService itemService;
+    private final ItemServiceInterface itemService;
 
     @GetMapping
     public List<ItemDTO> getItems() {
@@ -25,12 +26,7 @@ public class ItemRestController {
     }
 
     @PostMapping
-    public ItemDTO createItem(@RequestBody ItemDTO itemDTO) {
-        return itemService.addItem(itemDTO);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteItem(@PathVariable Long id) {
-        itemService.deleteItem(id);
+    public ItemDTO addItem(@RequestBody ItemDTO itemDto) {
+        return itemService.createItem(itemDto);
     }
 }

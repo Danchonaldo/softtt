@@ -25,19 +25,19 @@
             <column name="name" value="rtx"/>
             <column name="price" value="1000"/>
             <column name="quantity" value="50"/>
-            <column name="manufacturer_id" value="1"/>
+            <column name="manufacturer_id" valueNumeric="1"/>
         </insert>
         <insert tableName="items">
             <column name="name" value="pocoX3"/>
             <column name="price" value="80000"/>
             <column name="quantity" value="10"/>
-            <column name="manufacturer_id" value="2"/>
+            <column name="manufacturer_id" valueNumeric="2"/>
         </insert>
         <insert tableName="items">
             <column name="name" value="samsung"/>
             <column name="price" value="500"/>
             <column name="quantity" value="100"/>
-            <column name="manufacturer_id" value="3"/>
+            <column name="manufacturer_id" valueNumeric="3"/>
         </insert>
     </changeSet>
 

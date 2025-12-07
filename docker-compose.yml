@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  main-db:
+    image: 'postgres'
+    container_name: 'main-database-container'
+    environment:
+      - POSTGRES_USER=lab-9
+      - POSTGRES_PASSWORD=11223344
+      - POSTGRES_DB=Lab9
+    ports:
+      - "2345:5432"
+
+  test-db:
+    image: 'postgres'
+    container_name: 'test-database-container'
+    environment:
+      - POSTGRES_USER=postgrest
+      - POSTGRES_PASSWORD=postgrest
+      - POSTGRES_DB=shop_test_db
+    ports:
+      - "2346:5432"
