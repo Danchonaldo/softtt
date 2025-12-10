@@ -5,9 +5,9 @@ services:
     image: 'postgres'
     container_name: 'main-database-container'
     environment:
-      - POSTGRES_USER=lab-9
-      - POSTGRES_PASSWORD=11223344
-      - POSTGRES_DB=Lab9
+      - POSTGRES_USER=lab10
+      - POSTGRES_PASSWORD=Dancho2005
+      - POSTGRES_DB=lab-10
     ports:
       - "2345:5432"
 
@@ -15,8 +15,8 @@ services:
     image: 'postgres'
     container_name: 'test-database-container'
     environment:
-      - POSTGRES_USER=postgrest
-      - POSTGRES_PASSWORD=postgrest
-      - POSTGRES_DB=shop_test_db
+      - POSTGRES_USER=lab10
+      - POSTGRES_PASSWORD=Dancho2005
+      - POSTGRES_DB=lab-10-test
     ports:
       - "2346:5432"
