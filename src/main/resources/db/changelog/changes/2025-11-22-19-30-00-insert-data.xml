@@ -7,12 +7,12 @@
 
     <changeSet id="seed-countries" author="student">
         <insert tableName="countries">
-            <column name="name" value="USA"/>
-            <column name="code" value="US"/>
+            <column name="name" value="Japan"/>
+            <column name="code" value="JP"/>
         </insert>
         <insert tableName="countries">
-            <column name="name" value="Germany"/>
-            <column name="code" value="DE"/>
+            <column name="name" value="Kazakhstan"/>
+            <column name="code" value="KZ"/>
         </insert>
         <insert tableName="countries">
             <column name="name" value="China"/>
@@ -22,21 +22,21 @@
 
     <changeSet id="seed-items" author="student">
         <insert tableName="items">
-            <column name="name" value="rtx"/>
-            <column name="price" value="1000"/>
+            <column name="name" value="Samsung s25 ultra"/>
+            <column name="price" value="1599"/>
             <column name="quantity" value="50"/>
             <column name="manufacturer_id" valueNumeric="1"/>
         </insert>
         <insert tableName="items">
-            <column name="name" value="pocoX3"/>
-            <column name="price" value="80000"/>
-            <column name="quantity" value="10"/>
+            <column name="name" value="Iphone 16 Pro"/>
+            <column name="price" value="1200"/>
+            <column name="quantity" value="15"/>
             <column name="manufacturer_id" valueNumeric="2"/>
         </insert>
         <insert tableName="items">
-            <column name="name" value="samsung"/>
-            <column name="price" value="500"/>
-            <column name="quantity" value="100"/>
+            <column name="name" value="Vivo Pixel"/>
+            <column name="price" value="1400"/>
+            <column name="quantity" value="50"/>
             <column name="manufacturer_id" valueNumeric="3"/>
         </insert>
     </changeSet>
