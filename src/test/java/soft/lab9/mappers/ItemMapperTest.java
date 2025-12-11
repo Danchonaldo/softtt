@@ -20,7 +20,7 @@ public class ItemMapperTest {
     @Test
     void convertEntityToDtoTest() {
         Country country = new Country(1L, "USA", "US");
-        Item item = new Item(1L, "Iphone 16", 600000, 100, country);
+        Item item = new Item(1L, "Iphone 4s", 200, 10, country);
 
         ItemDTO itemDto = itemMapper.toDto(item);
 
@@ -42,9 +42,9 @@ public class ItemMapperTest {
     void convertDtoToEntityTest() {
         ItemDTO itemDto = ItemDTO.builder()
                 .id(1L)
-                .name("Iphone 16")
-                .price(600000)
-                .quantity(100)
+                .name("Iphone 4s")
+                .price(200)
+                .quantity(10)
                 .build();
 
         Item item = itemMapper.toEntity(itemDto);
@@ -59,8 +59,8 @@ public class ItemMapperTest {
     @Test
     void convertEntityListToDtoListTest() {
         List<Item> items = new ArrayList<>();
-        items.add(new Item(1L, "Iphone 16", 600000, 100, null));
-        items.add(new Item(2L, "Iphone 16S", 700000, 80, null));
+        items.add(new Item(1L, "Iphone 4s", 200, 10, null));
+        items.add(new Item(2L, "Nokia 3310", 50, 3, null));
 
         List<ItemDTO> itemDtoList = itemMapper.toDtoList(items);
 

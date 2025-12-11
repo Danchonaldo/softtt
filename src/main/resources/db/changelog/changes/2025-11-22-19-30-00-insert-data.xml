@@ -7,8 +7,8 @@
 
     <changeSet id="seed-countries" author="student">
         <insert tableName="countries">
-            <column name="name" value="Japan"/>
-            <column name="code" value="JP"/>
+            <column name="name" value="Korea"/>
+            <column name="code" value="KR"/>
         </insert>
         <insert tableName="countries">
             <column name="name" value="Kazakhstan"/>

@@ -4,11 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import soft.lab9.dto.CountryDTO;
 
 import java.util.List;
 
 @SpringBootTest
+@Transactional
 public class CountryServiceTest {
 
     @Autowired
@@ -53,19 +55,19 @@ public class CountryServiceTest {
         List<CountryDTO> list = countryService.getAllCountries();
         Long id = list.get(0).getId();
 
-        CountryDTO toUpdate = CountryDTO.builder().id(id).name("Updated test").code("UN").build();
+        CountryDTO toUpdate = CountryDTO.builder().id(id).name("New").code("NW").build();
         CountryDTO updated = countryService.updateCountry(id, toUpdate);
 
         Assertions.assertNotNull(updated);
-        Assertions.assertEquals("Updated test", updated.getName());
+        Assertions.assertEquals("New", updated.getName());
 
         CountryDTO check = countryService.getCountryById(id);
-        Assertions.assertEquals("Updated test", check.getName());
+        Assertions.assertEquals("New", check.getName());
     }
 
     @Test
     void deleteCountryTest() {
-        CountryDTO temp = countryService.createCountry(CountryDTO.builder().name("test").code("TM").build());
+        CountryDTO temp = countryService.createCountry(CountryDTO.builder().name("testtt").code("TT").build());
         Long id = temp.getId();
 
         boolean deleted = countryService.deleteCountry(id);

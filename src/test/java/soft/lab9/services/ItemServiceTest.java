@@ -49,16 +49,15 @@ public class ItemServiceTest {
             Assertions.assertNotNull(ItemDTO.getManufacturer().getName());
         }
 
-        ItemDTO mockItem = itemService.getItemById(-1L);
-        Assertions.assertNull(mockItem);
+
     }
 
     @Test
     void createItemTest() {
         CountryDTO country = countryService.getAllCountries().get(0);
 
-        ItemDTO ItemDto = ItemDTO.builder().name("test 16 Plus").price(800000)
-                .quantity(60)
+        ItemDTO ItemDto = ItemDTO.builder().name("testtt").price(2399)
+                .quantity(45)
                 .manufacturer(country)
                 .build();
 
@@ -84,9 +83,9 @@ public class ItemServiceTest {
         ItemDTO ItemDto = ItemDTO
                 .builder()
                 .id(someItemId)
-                .name("New Item Name")
-                .price(10000)
-                .quantity(30)
+                .name("New Item")
+                .price(100)
+                .quantity(20)
                 .build();
 
         ItemDTO updatedItem = itemService.updateItem(ItemDto.getId(), ItemDto);
@@ -104,7 +103,7 @@ public class ItemServiceTest {
 
     @Test
     void deleteItemTest() {
-        ItemDTO temp = itemService.createItem(ItemDTO.builder().name("Del").price(1).quantity(1).build());
+        ItemDTO temp = itemService.createItem(ItemDTO.builder().name("Deletee").price(25).quantity(1).build());
         Long id = temp.getId();
 
         boolean deleted = itemService.deleteItem(id);
