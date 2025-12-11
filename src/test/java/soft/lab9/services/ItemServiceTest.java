@@ -14,10 +14,10 @@ import java.util.Random;
 public class ItemServiceTest {
 
     @Autowired
-    private ItemServiceInterface itemService;
+    private ItemService itemService;
 
     @Autowired
-    private CountryServiceInterface countryService;
+    private CountryService countryService;
 
     @Test
     void getAllItemsTest() {

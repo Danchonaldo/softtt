@@ -4,7 +4,7 @@ import soft.lab9.dto.ItemDTO;
 
 import java.util.List;
 
-public interface ItemServiceInterface {
+public interface ItemService {
     List<ItemDTO> getAllItems();
     ItemDTO getItemById(Long id);
     ItemDTO createItem(ItemDTO itemDto);

@@ -7,13 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import soft.lab9.dto.CountryDTO;
 
 import java.util.List;
-import java.util.Random;
 
 @SpringBootTest
 public class CountryServiceTest {
 
     @Autowired
-    private CountryServiceInterface countryService;
+    private CountryService countryService;
 
 
     @Test

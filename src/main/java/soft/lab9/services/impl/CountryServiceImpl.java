@@ -6,14 +6,13 @@ import soft.lab9.dto.CountryDTO;
 import soft.lab9.entity.Country;
 import soft.lab9.mappers.CountryMapper;
 import soft.lab9.repositories.CountryRepository;
-import soft.lab9.services.CountryServiceInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class CountryService implements CountryServiceInterface {
+public class CountryServiceImpl implements soft.lab9.services.CountryService {
 
     private final CountryRepository countryRepository;
     private final CountryMapper countryMapper;

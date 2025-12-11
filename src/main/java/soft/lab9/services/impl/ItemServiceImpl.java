@@ -9,14 +9,13 @@ import soft.lab9.mappers.CountryMapper;
 import soft.lab9.mappers.ItemMapper;
 import soft.lab9.repositories.CountryRepository;
 import soft.lab9.repositories.ItemRepository;
-import soft.lab9.services.ItemServiceInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ItemService implements ItemServiceInterface {
+public class ItemServiceImpl implements soft.lab9.services.ItemService {
 
     private final ItemRepository itemRepository;
     private final ItemMapper itemMapper;

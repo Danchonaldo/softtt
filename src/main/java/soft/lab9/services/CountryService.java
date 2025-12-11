@@ -4,7 +4,7 @@ import soft.lab9.dto.CountryDTO;
 
 import java.util.List;
 
-public interface CountryServiceInterface {
+public interface CountryService {
     List<CountryDTO> getAllCountries();
     CountryDTO getCountryById(Long id);
     CountryDTO createCountry(CountryDTO countryDTO);

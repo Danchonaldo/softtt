@@ -3,7 +3,7 @@ package soft.lab9.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import soft.lab9.dto.ItemDTO;
-import soft.lab9.services.ItemServiceInterface;
+import soft.lab9.services.ItemService;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RestController {
 
-    private final ItemServiceInterface itemService;
+    private final ItemService itemService;
 
     @GetMapping
     public List<ItemDTO> getItems() {

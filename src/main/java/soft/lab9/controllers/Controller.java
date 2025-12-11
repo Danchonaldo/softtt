@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import soft.lab9.dto.ItemDTO;
-import soft.lab9.services.CountryServiceInterface;
-import soft.lab9.services.ItemServiceInterface;
+import soft.lab9.services.CountryService;
+import soft.lab9.services.ItemService;
 
 @org.springframework.stereotype.Controller
 @RequiredArgsConstructor
 public class Controller {
 
-    private final ItemServiceInterface itemService;
-    private final CountryServiceInterface countryService;
+    private final ItemService itemService;
+    private final CountryService countryService;
 
     @GetMapping("/")
     public String index(Model model) {
