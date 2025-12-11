@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Shop Inventory</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -34,9 +33,9 @@
                 <tbody>
                 <tr th:each="it : ${items}">
                     <td th:text="${it.id}"></td>
-                    <td th:text="${it.name}"></td> <!-- Исправлено с itemName на name согласно DTO -->
-                    <td th:text="${it.price}"></td> <!-- Исправлено с itemPrice на price согласно DTO -->
-                    <td th:text="${it.quantity}"></td> <!-- Исправлено с count на quantity согласно DTO -->
+                    <td th:text="${it.name}"></td>
+                    <td th:text="${it.price}"></td>
+                    <td th:text="${it.quantity}"></td>
                     <td>
                         <span class="badge bg-info text-dark"
                               th:text="${it.manufacturer != null ? it.manufacturer.name : 'None'}">
@@ -44,10 +43,8 @@
                     </td>
                     <td>
                         <div class="d-flex gap-2">
-                            <!-- Кнопка редактирования -->
                             <a th:href="@{'/edit-item/' + ${it.id}}" class="btn btn-warning btn-sm">Edit</a>
 
-                            <!-- Форма удаления -->
                             <form th:action="@{'/delete-item/' + ${it.id}}" method="post"
                                   onsubmit="return confirm('Are you sure you want to delete this item?');">
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

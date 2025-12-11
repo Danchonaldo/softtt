@@ -1,7 +1,6 @@
 package soft.lab9.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,9 +10,9 @@ import soft.lab9.dto.ItemDTO;
 import soft.lab9.services.CountryServiceInterface;
 import soft.lab9.services.ItemServiceInterface;
 
-@Controller
+@org.springframework.stereotype.Controller
 @RequiredArgsConstructor
-public class htmlController {
+public class Controller {
 
     private final ItemServiceInterface itemService;
     private final CountryServiceInterface countryService;

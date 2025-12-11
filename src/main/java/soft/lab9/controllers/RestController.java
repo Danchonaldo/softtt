@@ -4,14 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import soft.lab9.dto.ItemDTO;
 import soft.lab9.services.ItemServiceInterface;
-import soft.lab9.services.impl.ItemService;
 
 import java.util.List;
 
-@RestController
+@org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api/items")
 @RequiredArgsConstructor
-public class ItemRestController {
+public class RestController {
 
     private final ItemServiceInterface itemService;
 

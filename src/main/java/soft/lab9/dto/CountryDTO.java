@@ -1,6 +1,5 @@
 package soft.lab9.dto;
 
-import jakarta.persistence.Basic;
 import lombok.*;
 
 @Builder

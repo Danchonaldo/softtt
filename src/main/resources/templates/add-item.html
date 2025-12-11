@@ -34,7 +34,6 @@
 
             <div class="mb-3">
               <label class="form-label">Manufacturer</label>
-              <!-- Важно: name="manufacturer.id" позволяет Spring автоматически создать объект CountryDTO внутри ItemDTO -->
               <select name="manufacturer.id" class="form-select" required>
                 <option value="" disabled selected>Select Country</option>
                 <option th:each="c : ${countries}"

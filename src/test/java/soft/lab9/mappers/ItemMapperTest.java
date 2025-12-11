@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import soft.lab9.dto.CountryDTO;
 import soft.lab9.dto.ItemDTO;
 import soft.lab9.entity.Country;
 import soft.lab9.entity.Item;
@@ -14,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest
-@ActiveProfiles("test")
 public class ItemMapperTest {
 
     @Autowired
